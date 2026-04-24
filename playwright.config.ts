@@ -1,6 +1,8 @@
+import 'dotenv/config';
 import { defineConfig, devices } from '@playwright/test';
 
-const baseURL = process.env.BASE_URL ?? 'http://localhost:3000';
+// AutonomyAI Studio (login + app). Can be overridden per environment.
+const baseURL = process.env.BASE_URL ?? 'https://studio.autonomyai.io';
 
 export default defineConfig({
   testDir: './tests',

@@ -15,19 +15,27 @@ npx playwright install
 
 ### Configure the target app URL
 
-By default, tests run against `http://localhost:3000`.
+By default, tests run against `https://studio.autonomyai.io`.
+
+Create a local env file (not committed):
+
+```bash
+copy .env.example .env
+```
 
 - **Windows (PowerShell)**:
 
 ```powershell
-$env:BASE_URL="https://your-autonomyai-url"
+$env:BASE_URL="https://studio.autonomyai.io"
+$env:TEST_USER_NAME="you@example.com"
+$env:TEST_USER_PASSWORD="your-password"
 npm test
 ```
 
 - **macOS/Linux**:
 
 ```bash
-BASE_URL="https://your-autonomyai-url" npm test
+BASE_URL="https://studio.autonomyai.io" TEST_USER_NAME="you@example.com" TEST_USER_PASSWORD="your-password" npm test
 ```
 
 ### Run tests
