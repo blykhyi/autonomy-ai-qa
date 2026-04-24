@@ -44,6 +44,18 @@ BASE_URL="https://studio.autonomyai.io" TEST_USER_NAME="you@example.com" TEST_US
 npm test
 ```
 
+### CI (GitHub Actions)
+
+The scheduled workflow uses GitHub Secrets. Configure these in your repo settings:
+
+- `BASE_URL` (e.g. `https://studio.autonomyai.io`)
+- `TEST_USER_NAME`
+- `TEST_USER_PASSWORD`
+- `TEST_PROJECT_NAME` (optional, default: `vite-react-sample`)
+- `TEST_PROMPT` (optional, default: the pagination prompt)
+- `OPENAI_API_KEY` (optional; if unset, verification falls back to heuristics)
+- `OPENAI_MODEL` (optional; default: `gpt-4.1-mini`)
+
 ### Useful commands
 
 ```bash
