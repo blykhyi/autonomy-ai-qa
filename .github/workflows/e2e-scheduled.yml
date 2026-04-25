@@ -12,8 +12,6 @@ jobs:
     timeout-minutes: 45
 
     env:
-      # Opt into Node.js 24 for GitHub JavaScript actions (Node 20 deprecation).
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       BASE_URL: ${{ secrets.BASE_URL }}
       TEST_USER_NAME: ${{ secrets.TEST_USER_NAME }}
       TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
@@ -24,10 +22,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "24"
           cache: "npm"
@@ -43,7 +41,7 @@ jobs:
 
       - name: Upload Playwright report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: playwright-report
           path: playwright-report
@@ -52,7 +50,7 @@ jobs:
 
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: test-results
           path: test-results
